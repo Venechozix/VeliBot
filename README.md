@@ -1,5 +1,6 @@
 # VeliBot
 Very functional and working music bot 
+
 current commands:
   - Play
   - Queue
