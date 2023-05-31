@@ -20,12 +20,9 @@ class Bot(commands.Bot):
         print(f"Logged to {self.user} | {self.user.id}")
     
     async def setup_hook(self) -> None:
-        sc = spotify.SpotifyClient(client_id="f32b6ffb6a314f28bef375a9cc54461f",client_secret="5783648465de48f2a555db4522ac5b84")
-        node : wavelink.Node = wavelink.Node(
-            uri="lavalink1.albinhakanson.se:1141"
-            ,password="albinhakanson.se"
-            ,secure=False
-        )
+        id = config('SPOTIFY_CLIENT_ID')
+        secret = config('SPOTIFY_CLIENT_SECRET')
+        sc = spotify.SpotifyClient(client_id=id,client_secret=secret)
         await wavelink.NodePool.connect(client=bot,nodes=[node],spotify=sc)
         wavelink.Player.autoplay = False
             
