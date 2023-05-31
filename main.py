@@ -14,7 +14,7 @@ class Bot(commands.Bot):
         intents = discord.Intents.all()
         client = discord.Client(intents=intents)
         tree = app_commands.CommandTree(client)
-        super().__init__(intents=intents,command_prefix='l!')
+        super().__init__(intents=intents,command_prefix='v!')
 
     async def on_ready(self) -> None:
         print(f"Logged to {self.user} | {self.user.id}")
